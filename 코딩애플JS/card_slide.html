@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <style>
+        .card-background{
+            height: 3000px;
+            margin-top: 100px;
+            margin-bottom: 1600px;
+        }
+        .card-box img{
+            display: block;
+            margin:auto;
+            max-width:80%;
+        }
+        .card-box{
+            position: sticky;
+            top:200px;
+            margin-top:400px;
+            transition: all 1s;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card-background">
+        <div class="card-box">
+            <img src="card1.png" alt="">
+        </div>
+        <div class="card-box">
+            <img src="card2.png" alt="">
+        </div>
+        <div class="card-box">
+            <img src="card3.png" alt="">
+        </div>
+    </div>
+    
+<script>
+    $(window).scroll(function(){
+        let height =$(window).scrollTop();
+        console.log(height);
+        // 608 : opacity = 1
+        // 837 : opacity = 0
+        // y = 스크롤바높이가 650~1150이 될 때 1~0이 되는 가변적인 값
+        // y = a * 높이 + b;
+        // 1 = a * 608 + b;
+        // 0 = a * 837 + b;
+        // a = -1/229;
+        // b = 3.645;
+        // let y = (-1/229) * height + (3.645);
+        // let a = y * 0.9
+        // $('.card-box').eq(0).css('opacity',y);
+        //$('.card-box').eq(0).css('scale','0.9'); 
+        let y = (-1/229) * height + (3.645);
+        let a = y * 0.9
+        $('.card-box').eq(0).css('opacity',y);
+        $('.card-box').eq(0).css('scale','0.9'); 
+
+       
+        if( '608' < height &&  height  <'700'){
+                $('.card-box').eq(0).css('scale','0.9');
+        }
+        if( '700' < height && height  <'800'){
+                $('.card-box').eq(0).css('scale','0.8');
+             
+        }
+        if( '800' < height && height  <'1169'){
+                $('.card-box').eq(0).css('scale','0.7');
+        }
+
+
+
+    })
+</script>
+</body>
+</html>
