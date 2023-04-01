@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <style>
+/* main */
+        main{
+            width:100%;
+            height: 500px;
+            background-color:rgb(84, 143, 246);
+            display: flex;
+        }
+        .main{
+            width: 50%;
+            height: 100%;          
+        } 
+        .main_left_txt{
+            margin: 0 auto;
+            margin-top: 50px;  
+            width: 60%;
+            overflow: hidden;
+            color: white;
+        }
+        .main_right{
+            background: linear-gradient(rgb(84, 143, 246),rgb(1, 44, 118),rgb(0, 13, 34));            
+        }
+        .main>img{
+            width: 50%;
+            height: 70%;
+            display: block;
+            margin: 0 auto;
+            margin-top:150px;
+        }
+        .btn{
+            width: 130px;
+            height: 30px;
+            background-color:rgba(19, 14, 14, 0.913);
+            color: white;
+            border: none;
+            font-size: 15px;
+            border-radius: 5px;   
+            cursor: pointer;        
+        }
+/* article */
+      
+.article_box{
+           text-align: center;
+           width: 100%;
+           height: 150px;
+           padding-top: 39px;
+        }
+        
+        
+
+/*section  */
+        section{
+            background-color: darkcyan;
+        }
+        .section_top{          
+            text-align: center;
+            padding-top: 30px;
+            color: white;
+        }
+
+        .section_top h3,.article_box h4,.article_box p
+        ,.Reactive-box h4,.Reactive-box p,.introduce_txt p
+        ,.introduce_txt h4{margin:5px;}
+
+        .Reactive{
+            display: flex;
+            width: 80%;
+            margin: auto;
+            margin-top: 30px;
+            margin-bottom: 50px;   
+        }
+        .Reactive-box{
+            width: 25%;      
+            color: aliceblue;
+            display:flex;
+            text-align: center;
+            flex-direction: column;   
+            overflow: hidden;   
+        }
+    /* icon */
+        .Reactive-box i{
+            margin: auto;
+            width: 100px;
+            height: 100px;
+            background-color: wheat;
+            border-radius: 50px;
+            padding-top: 35px;
+            box-sizing: border-box;
+            color: darkcyan;
+            margin-top: 10px;
+        }
+        .Reactive-box>h4{
+            margin-top: 20px;
+        }
+/*introduce  */
+        .introduce{
+
+            margin: 0 auto;
+        }
+        .introduce_txt{
+            text-align: center;
+        }
+        .introduce_img{
+            margin: 0 auto;
+        }
+        .introduce_img > div{
+            display: flex;
+        }
+        .introduce_img_common{
+            background-repeat :no-repeat;
+            background-position : center ;
+            background-size: cover;
+            height:300px;
+            width: 50%;  
+        }  
+        .img1{ background-image: url(../portfolio-1.jpg);}
+        .img2{ background-image: url(../portfolio-3.jpg);}
+        .img3{background-image: url(../portfolio-4.jpg);}
+        .img4{background-image: url(../e.jpg);}
+        .introduce_img_common > div{
+            margin-top: 50px;
+            margin-left: 40px;
+
+        }
+    
+/* 여러 공통속성중 내가 호버한 요소만 잡을수 x? */
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <main>
+            <div class="main">
+                <div class="main_left_txt">
+                    <h2>Landing Page for Apps</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem et est corporis iusto repellat, vel eligendi error!</p>
+                    <button class="btn" type="submit">Show More</button>
+                </div>
+                
+            </div>
+            <div class="main main_right">
+                <img src="../iphone.png" alt="">
+            </div>
+        </main>
+
+
+        <article>
+            <div class="article_box">
+                <h4>It is the perfect theme for your newxt Project!</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <button class="btn" type="submit">Show Portfolio</button>
+
+            </div>
+
+        </article> 
+
+
+
+        <section>
+            <div class="section_top">
+                <div>services</div>
+                <h3>What We Offer</h3>
+            </div>
+            <div class="section_bottom">
+                    <div class="Reactive">
+                        <div class="Reactive-box">
+                            <i class="fas fa-book fa-2x" ></i>
+                            <h4>Shopping</h4>
+                            <p>lerem asdasasdasd</p>
+                        </div>
+                        <div class="Reactive-box">
+                            <i class="fas fa-shopping-cart fa-2x"></i>
+                            <h4>Shopping</h4>
+                            <p>lerem kkasjdksa</p>
+                        </div>
+                        <div class="Reactive-box">
+                            <i class="fas fa-star fa-2x"></i>
+                            <h4>Shopping</h4>
+                            <p>lerem asdasvsaaaaa</p>
+                        </div>
+                        <div class="Reactive-box">
+                            <i class="fas fa-heart fa-2x"></i>
+                            <h4>Shopping</h4>
+                            <p>lerem asdasddddds</p>
+                        </div>
+                    </div> 
+            </div>
+        </section>     
+        <!-- background로 주면 class가 4개  -->
+        <div class="introduce">
+            <div class="introduce_txt">
+                <p>introduce</p>
+                <h4>What we can DO</h4>
+            </div>
+            <div class="introduce_img">
+                <div>
+                    <div class="introduce_img_common img1">
+                        <div>
+                        <h3>Stationary</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing</p>
+                    </div>
+                    </div>
+                    <div class="introduce_img_common img2">
+                        <div>
+                        <h3>Stationary</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing</p>
+                    </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="introduce_img_common img3">
+                        <div>
+                        <h3>Stationary</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing</p>
+                    </div>
+                    </div>
+                    <div class="introduce_img_common img4">
+                        <div>
+                        <h3>Stationary</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+
+
+        </footer>
+    </div>
+</body>
+</html>

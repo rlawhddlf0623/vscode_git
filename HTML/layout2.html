@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/common.css">
+    <style>
+        .main-background{
+            width: 100%;
+            height: 500px;
+            background-image: url(../다운로드.jpg);
+            background-repeat: no-repeat;
+            /* 배경꽉차게 */
+            background-size: cover;
+            /* 배경위치 조정가능 */
+            background-position: center;
+            /* 밝기 조절필터 */
+            /* filter:brightness(70%); */
+          
+            padding-top: 1px;
+            text-align: center; 
+        }
+        .main-title{
+            color: wheat;
+            font-size: 40px;
+            margin-top: 100px;  
+           
+        }
+        .main-txt{
+            color: white;
+            font-size: 20px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+        }
+        .payment{
+            width: 120px;
+            padding: 10px;
+            font-size: 15px;
+            color:black;
+            background-color:white;
+
+            border: none;
+            border-radius: 5px;
+        }
+        .side{
+            width: 70%;
+            max-width: 1000px;
+            min-width: 600;
+            position: relative;
+            top: 50px;
+            background-color:#eee;
+            text-align: center;
+            padding: 20px;
+            margin: 0 auto;
+           
+        }
+        .form{
+            position: absolute;
+            top:200px;
+        }
+        .textarea{
+            padding: 10px;
+            font-size: 15px;
+            border: 2px solid;
+        }
+    </style>
+</head>
+<!--margin collapse현상 
+    box 2개가 위쪽 테두리가 겹쳐지면 margin도 합쳐진다. -->
+    <!-- box-sizing : border-box;
+        width는 실제 컨텐츠영역(margin포함)을 의미하는데
+        우리가 눈에 보이는 영역(padding,border)도 width에 포함시키는것
+
+
+     -->
+<body>
+    <div class="main-background">
+        <h4 class="main-title">buy shoes!</h4>
+        <p class="main-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro eos odit, maiores molestiae provident voluptatem similique repellat repudiandae eum amet, ducimus, sequi doloribus reiciendis harum dolore facilis quam culpa natus.</p>
+        <button class="payment"><a href="https://en.dict.naver.com/#/search?query=%EA%B2%B0%EC%A0%9C&range=all" target="target_blank">Buy now</a></button>
+        <div class="side">
+            <h2>How we design our shoes</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore tenetur, quam tempora, similique natus at harum dicta, nisi vitae ipsum tempore ut repellendus saepe rem impedit delectus? Corrupti, culpa repellat!</p>
+        
+            <form action="" method="get" class="form">
+                <input type="text" name="id" placeholder="아이디를 입력하세요">
+                <input type="password">
+                <button type="submit">전송</button>
+                <select name="상품조회" id="">
+                    <option value="">1개월</option>
+                    <option value="">3개월</option>
+                    <option value="">6개월</option>
+                </select>
+
+                <!-- 큰 인풋 -->
+                <textarea class="textarea" name="" id="" cols="30" rows="10">미리 입력된 값</textarea>
+                
+            </form>
+
+
+        </div>
+
+       
+    </div>
+    
+   
+</body>
+</html>

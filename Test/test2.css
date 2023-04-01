@@ -1,0 +1,18 @@
+.alert_box .alert, .alert_box .two {
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 15px;
+  color: white;
+}
+
+.one {
+  background-color: aqua;
+}
+
+.two {
+  background-color: yellowgreen;
+}
+
+.three {
+  background-color: blue;
+}/*# sourceMappingURL=test2.css.map */

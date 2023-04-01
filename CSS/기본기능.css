@@ -1,0 +1,43 @@
+/* 요소 중간 정렬 */
+
+        .Sort-block{
+            /* 부모안의 자식요소에 사용하면 부모안에서 자식요소 가운데 정렬 */
+            margin: 0 auto;
+        }
+        .Sort-inline{
+            text-align: center;
+        }
+        .center{
+            /* translate는 자기자신의 크기의 퍼센트로 계산 */
+
+            /* 자식의 가로,세로가 부모대비 50%일때 */
+            transform : translate(50% , 50%);  
+
+            /* 크기 상관없이 사용할 경우 */
+            position : absolute ;
+            top:50%;
+            left :50%;
+            transform : translate(-50% ,-50%);
+        }
+
+        .flex{ 
+            /* 부모요소안에서 자식요소 정중앙 정렬 (여러개할때) */
+            justify-content:center;
+            align-items:center;
+        }
+
+
+
+
+/* Text정렬 */
+        .width{
+            text-align: center;
+        }
+        .height{
+            /* line-height: 부모크기만큼; */
+            /* text가 기본적으로 잡고 있는 높이를 부모만큼 변경해주는것 */
+        }
+        /* inline/inline-block요소 간의 세로정렬할때 */
+        .a{
+            vertical-align:center;
+        }

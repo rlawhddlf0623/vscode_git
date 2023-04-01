@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .background{
+            background-color:antiquewhite;
+            width: 100%;
+            height: 100vh;
+        }
+        .container{
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background-color: white;
+            width: 50%;
+            height: 50%;
+            padding: 30px;
+            position: relative;
+        }
+        p{
+            font-size: 18px;
+            margin: 10px 0px;
+        }
+        input{
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .First-Name{
+            width: 45%;
+            float: left;
+        }
+        .Last-Name{
+            width: 45%;
+            float: right;
+        }
+        .Message-box{
+            height: auto;
+            min-height: 150px;
+        }
+        .checkbox{
+            width: 20px;
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+        }
+        .checkbox-txt{
+            position: absolute;
+            bottom: 30px;
+            left: 60px;
+        }
+        .send{
+            width: 100px;
+            height: 40px;
+            background-color: yellowgreen;
+            border: none;
+            color:white;
+            font-size: 20px;
+            position: absolute;
+            bottom: 20px;
+            right: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="container">
+        <h1>회원가입</h1>
+        <div class="email">
+            <p>Your Email</p>
+            <input type="email" placeholder="rlawhddlf0623@naver.com" name="" id="">
+        </div>
+            <div class="name">
+                <div class="First-Name">
+                    <p>First Name</p>
+                    <input type="text">
+                </div>
+                <div class="Last-Name">
+                    <p>Last Name</p>
+                    <input type="text">
+                </div>
+            </div>
+            <div style="clear: both;"></div>
+            <div class="Message">
+                <p>Message</p>
+                <input class="Message-box" type="text">
+            </div>
+            <footer>
+                <input class="checkbox" type="checkbox" name="" id="sub">
+                <label class="checkbox-txt" for="sub">Subscribe</label>
+                <button class="send" type="submit">send</button>
+               
+            </footer>
+    </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-sm-4">
+              <img src="https://via.placeholder.com/600" class="w-100">
+              <h5>Card title</h5>
+              <p>가격 : 70000</p>
+              
+            </div> -->
+    </div>
+    <button class="btn btn-danger">더 보기</button>
+  </div>
+
+  <form class="container my-5 form-group">
+    <p>상품선택</p>
+    <select class="form-select mt-2">
+      <option data-id="1">모자</option>
+      <option data-id="2">셔츠</option>
+    </select>
+    <select class="form-select mt-2" style="display: none;">
+      <option>95</option>
+      <option>100</option>
+      <option>105</option>
+      <option>110</option>
+    </select>
+  </form>
+<button class="sort">가격 낮은순</button>
+<button class="cba">다나가순 정렬</button>
+<button class="price_six">6만원 이하만 보기</button>
+  <script>
+/*========*/
+    var products = [
+      { id: 0, price: 70000, title: 'Blossom Dress' },
+      { id: 1, price: 50000, title: 'Springfield Shirt' },
+      { id: 2, price: 60000, title: 'Black Monastery' }
+    ]; 
+
+// 들어오면 기본으로 보여주는 화면
+function first_show(){
+    for (i = 0; i < products.length; i++) {
+      $('.col-sm-4 h5').eq(i).html(products[i].title);
+      $('.col-sm-4 p').eq(i).html(`가격 :${products[i].price}`);
+
+      let card = `<div class="col-sm-4">
+                    <img src="https://via.placeholder.com/600" class="w-100">
+                    <h5>${products[i].title}</h5>
+                    <p>${products[i].price}</p>
+                    <button class="buy_btn">구매</button>
+                   
+                    </div>`
+                    $('.row').append(card);
+                    
+    }
+}
+first_show()
+/*  '더 보기'버튼 클릭시 데이터를 받아 html을 보여준다.
+    1)'더 보기'버튼 1번 클릭시 데이터를 받아 html보여준다.
+    2)'더 보기'버튼 2번 클릭시 서버에 있는 마지막데이터 이므로'더 보기'버튼 안보이게 하고
+      html을 보여준다.
+*/
+    let btn_click = 0;
+    $('.btn-danger').on('click', function () {
+      btn_click++;
+      if (btn_click == 1) {
+        $.get('https://codingapple1.github.io/js/more1.json')
+          .done(function (data1) {
+            products_data(data1);    
+                  })
+               }
+      else if (btn_click == 2) {
+        $.get('https://codingapple1.github.io/js/more2.json')
+          .done(function (data2) {
+            $('.btn-danger').css('display', 'none')
+            products_data(data2);           
+          })
+         }
+
+    });
+// 데이터를 받아 html을 화면에 보여주는 함수
+    function products_data(parm) {
+      for (i = 0; i < parm.length; i++) {
+        $('.col-sm-4 h5').eq(i).html(parm[i].title);
+        $('.col-sm-4 p').eq(i).html(`가격 :${parm[i].price}`);
+        let card = `<div class="col-sm-4">
+                      <img src="https://via.placeholder.com/600" class="w-100">
+                      <h5>${parm[i].title}</h5>
+                      <p>${parm[i].price}</p>
+                      <button class="buy_btn">구매</button>
+                    
+                    </div>`
+        $('.row').append(card);
+      
+      }
+    }
+
+
+/*가격 낮은순 정렬
+      배열안의 객체중 price값을 오름차순으로 정렬해서 
+      html 출력한다.
+*/
+
+  //  let으로 변수선언할거면 사용할 함수안에서 선언하자!
+    $('.sort').on('click',function(){
+      let products_sort = products.sort(function(a, b){
+        return a.price - b.price 
+      });
+      $('.row').html(''); 
+      
+      products_data(products_sort);
+    })
+
+
+//옵션 선택창
+    // 유저가 선택한 값
+    //input :input안의 값이 변경될때마다 동작
+    //e.currentTarget : 현재 이벤트가 달린곳
+    let pants = [28, 30, 32, 34, 36];
+    $('.form-select').eq(0).on('input', function () {
+      let Choice = this.value;
+      if (Choice == "셔츠") {
+        $('.form-select').eq(1).css('display', 'block');
+      } else if (Choice == '모자') {
+        $('.form-select').eq(1).css('display', 'block');
+        $('.form-select').eq(1).html('');
+
+        //  for(let i=0;i<pants.length;i++){
+        //  let num = `<option>${pants[i]}</option>`;           
+        //  $('.form-select').eq(1).append(num);
+        //   }
+        pants.forEach(function (a) {
+          $('.form-select').eq(1).append(`<option>${a}</option>`)
+        })
+      }
+    })
+
+    // var products = [
+    //   { id: 0, price: 70000, title: 'Blossom Dress' },
+    //   { id: 1, price: 50000, title: 'Springfield Shirt' },
+    //   { id: 2, price: 60000, title: 'Black Monastery' }
+    // ]; 
+// 6만원이하 상품만 보여주기
+    let price_six = products.filter(function(a){
+        return a.price <= 60000 ;
+      });
+    $('.price_six').on('click',function(){
+      $('.row').html('');
+      products_data(price_six);
+    })
+
+//다나가순 정렬 :.localeCompare(비교할문자열,언어코드,구두점을 무시하도록)
+    // let cba = products.sort((a, b) => 
+    //           a.title.localeCompare(b.title, 'en', {ignorePunctuation: true}));
+        let cba = products.sort(function(a, b){
+      if(a.title < b.title){
+        return 1
+      }else if(a.title > b.title){
+        return -1
+      }else{
+        return 0
+      }
+    });
+    
+    $('.cba').on('click',function(){      
+      $('.row').html('');
+      products_data(cba);
+    })
+
+  /*
+               let cart = {};
+             
+            if (local_cart_get) {
+              cart = JSON.parse(local_cart_get);
+              console.log(cart)
+            }
+            if (cart.includes(products_name)) {
+              
+              cart[products_name] += 1;
+              console.log(cart[products_name])
+            } else {
+              cart[products_name] = 1;
+              console.log(cart[products_name])
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));*/
+ 
+$('.buy_btn').click(function(e){
+// 상품명 저장
+      let products_name =$(e.target).siblings('h5').text();
+//localStorage의 'cart'를 변수에 저장
+      const local_cart_get =localStorage.getItem('cart');
+//1.localStorage이 비어있지 않으면  
+      
+      if( local_cart_get != null){      
+        if(JSON.parse(local_cart_get).includes(products_name)){       
+          alert('중복')
+      
+        }
+
+        // 1.localStorage에 있는값 출력하기
+        let arr = JSON.parse(local_cart_get);
+        // 2.변수에 값 추가하기
+        arr.push(products_name);
+        // 3.localStorage에 값추가
+        localStorage.setItem('cart',JSON.stringify(arr));
+      }
+//1.localStorage이 비어있으면  
+      else{
+        localStorage.setItem('cart',JSON.stringify([products_name]));
+      }
+
+})
+   
+// if (arr.includes(value)) {
+//     alert("이미 입력된 값입니다. 다른 값을 입력해주세요.");
+//   }
+
+// filter() : 원본 변형x
+// 결과는 변수에 저장해서 사용해야 한다.
+// let array =[1,9,3,2,63,34,7]
+// let new_array = array.filter(function(a){
+//   return a < 20
+// });
+// console.log(new_array);
+  </script>
+</body>
+
+</html>

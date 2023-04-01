@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        1.controls : 재생버튼
+        2.autoplay : 크롬에서는 muted를 같이 사용해야 한다.
+        3.preload : 미리 다운받을지 결정(none / auto / metadata : 적당히)
+        4.poster="썸네일경로"
+        5.loop :무한반복재생
+     -->
+    <video controls autoplay muted preload="metadata">
+        <!-- source를 사용하면 호환성이 좋다.(다양한 video양식이 있다.) -->
+        <source src="bridge.mp4" type="video/mp4">     
+    </video>
+    
+<!-- audio는 크롬정책변화로 autoplay가 막혀있다. -->
+    <audio controls >
+        <source  src="bass.mp3" >
+    </audio>
+</body>
+</html>

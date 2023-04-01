@@ -1,0 +1,13 @@
+.alert-box{
+    background-color: aqua;
+    padding: 29px;
+    color:white;
+    border-radius: 5px;
+    display:block;
+}
+.block{
+    display: block;
+}
+.none{
+    display: none;
+}

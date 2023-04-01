@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { background: #000; display: flex; }
+ul, li { list-style: none; }
+ul { position: relative; display: flex; flex-direction: column; align-items: flex-start; top: 20px; left: 20px; }
+li { font-size: 40px; margin: 20px 0; }
+li a { text-decoration: none; color: #fff; }
+li:nth-child(2) a { color: red; }
+li:nth-child(3) a { color: blue; }
+li:nth-child(4) a { color: green; }
+li:nth-child(5) a { color: pink; }
+.cursor { position: fixed; width: 20px; height: 20px; border-radius: 50%; background: #fff; transition: transform 0.2s; mix-blend-mode: difference; transform: translate(-50%, -50%); pointer-events: none; }
+ul li:hover ~ .cursor { transform: scale(5); }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><img src="https://source.unsplash.com/random/400x400" alt=""></li>
+        <div class="cursor"></div>
+      </ul>
+</body>
+<script>
+    const $cursor = document.querySelector('.cursor');
+document.addEventListener('mousemove', function(e) {
+  $cursor.style.left = e.clientX + 'px';
+  $cursor.style.top = e.clientY + 'px';
+});
+</script>
+</html>

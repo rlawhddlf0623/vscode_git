@@ -1,0 +1,32 @@
+    /* 테블릿 */
+    /* @media screen and (max-width:1200px){
+        .Reactive-box{
+            width: 50%;
+        }
+        .Reactive{
+            max-width: 600px;
+            
+        }
+    }     */
+    @media screen and (max-width:768px){
+        .Reactive-box{
+            width: 50%;
+
+        }
+        .Reactive{
+            max-width:768px ;
+           flex-wrap: wrap;
+        }
+
+
+        }
+    /* 모바일 */
+    @media screen and (max-width:576px){
+        .Reactive{
+            flex-direction: column;
+            max-width: 400px;
+        }
+        .Reactive-box{
+            width: 100%;
+        }
+        }

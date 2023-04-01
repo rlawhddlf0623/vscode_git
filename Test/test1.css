@@ -1,0 +1,24 @@
+.list_ul .list {
+  list-style: none;
+  height: 50px;
+  font-size: 20px;
+  padding: 10px;
+  line-height: 50px;
+  border: 1px solid #eee;
+}
+
+.li1:hover, .li2:hover, .li3:hover {
+  background-color: chartreuse;
+}
+
+.li1::after {
+  content: "Cras justo odio";
+}
+
+.li2::after {
+  content: "Dapibus ac facilisis in";
+}
+
+.li3::after {
+  content: "Morbi leo risus";
+}/*# sourceMappingURL=test1.css.map */

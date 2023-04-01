@@ -1,0 +1,48 @@
+
+.flex-box {
+    display: flex;
+    justify-content: space-around;
+    background-color: slategrey;
+    /* 가로정렬 */
+    /* justify-content:center; */
+    /* 세로정렬  */
+    /* flex-direction: column; */
+    /* 폭이 넘치는 요소wrap */
+    /* flex-wrap: wrap; */
+    /* 부모요소안에서 자식요소가 상하정렬 */
+    /* align-items:center; */
+    /* height: 500px; */
+    line-height: 40px;
+    width: 100%;
+
+    position: fixed;
+    top:0px;
+    left: 0px;
+
+}
+
+.flex-item {
+    width: 50px;
+    height: 40px;
+
+    margin: 0px 20px;
+    padding: 10px;
+    color: white;
+
+}
+
+.font {
+    font-size: 25px;
+    font-weight: 900;
+}
+
+.flex-item:nth-child(6) {
+    background-color: aquamarine;
+    border-radius: 30%;
+    
+}
+
+/* 폭이 상대적으로 몇배인지 결정 */
+.grow1 {
+    flex-grow: 1;
+}

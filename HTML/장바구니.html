@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/common.css">
+    <style>
+        body{
+            background-color: antiquewhite;
+        }
+        table{
+            border-collapse: collapse;
+        }
+        img{
+            width:70px;
+            height:70px;  
+                 
+        }
+        p{
+            margin: 1px;
+        }
+        .cart-table{
+            
+            margin:0 auto;
+            background-color:white;
+            border-radius: 10px;
+        }
+        .cart-table td,tr,th{
+            padding: 15px;
+            /* border:1px solid #c2d3de; */
+        }
+        .second-tr td,.second-tr th{
+            border-bottom:1px solid #c2d3de;
+            
+        }
+        .btn{
+            padding: 15px;
+            font-size: 15px;
+            border: none;
+            border-radius: 10px;
+            background-color:darkseagreen;
+            color: white;
+            cursor:pointer;            
+        }
+        /* 3개동시에 사용시 순서가 중요 */
+        .btn:hover{
+            background-color: cornflowerblue;
+        }
+      
+        /* 버튼을 누르고 나서 마우스를 뗐을때 (다른곳을 클릭하면 풀린다.)*/
+        .btn:focus{
+            background-color:chartreuse;
+        }
+         /* 버튼을 클릭했을때 */
+        /* .btn:active{
+            background-color: brown;
+        } */
+        .input{
+            height: 30px;
+            padding: 10px;
+        }
+        .input:focus{
+            border: 1px solid #10a37f;
+            outline: none;            
+        }
+       a:visited{
+        color:cadetblue;
+       }
+    </style>
+</head>
+<!-- table에서는 세로정렬할때 vertical-align은 top/middle/bottom  -->
+<!-- display:inline혹은 inline-block요소들을 나란히 배치하면 상하정렬이 이상한 경우가 있다.
+    큰 이미지와 글 / 큰글씨옆에 있는 작은 글씨 배치하면 서로 높이가 맞지 않는 경우가 있는데
+    이때 사용
+-->
+<body>
+    <div>
+        <table class="cart-table">
+            <!-- 기능상 차이없지만 분류를 위해 -->
+            <thead class="second-tr">
+                <td></td>
+                <th style="width: 100px;">ITEM</th>
+                <th>AMOUNT</th>
+                <th>PEICE</th>
+                <th>TOTAL</th>
+            </thead>
+
+            <tbody>
+                <tr class="second-tr">
+                   
+                    <td style="padding:1px;"><img src="../프젝 이미지/스킨케어/11.jpg" alt=""></td>
+                    <td><p>소니</p><p>소니2</p></td>
+                    <td>4</td>
+                    <td>2000 won</td>
+                    <td>8000</td>
+                </tr>
+                <tr>
+                    <td colspan="5" style="text-align: right;">총가격 :8000 won</td>
+                </tr>
+            </tbody>
+            
+        </table>
+        <button class="btn">구매하기</button>       
+         <input autofocus class="input" type="text" name="" id="">
+        <a href="#">이동</a>
+        
+    </div>
+</body>
+</html>

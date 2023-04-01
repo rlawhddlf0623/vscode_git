@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="../CSS/common.css">
+    <link rel="stylesheet" href="../코딩애플JS/main.css">
+    <style>
+        .header {
+            /* 겹치면 같이 이동하기 방지 */
+            top: 1px;
+            width: 100%;
+            height: 70px;
+            background-color: aliceblue;
+            position: fixed;
+            z-index: 999;
+        }
+
+        .header_logo {
+            font-size: 50px;
+            transition: all 1s;
+        }
+
+        .progress-bar {
+            width: 0%;
+            margin-top: 12.5px;
+            height: 2px;
+            background-color: black;
+            position: absolute;
+            bottom: 0px;
+        }
+
+        /*  */
+        .container {
+            margin-top: 150px;
+        }
+
+        ul.list {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            border-bottom: 1px solid #ccc;
+        }
+
+        ul.list::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .tab-button {
+            display: block;
+            padding: 10px 20px 10px 20px;
+            float: left;
+            margin-right: -1px;
+            margin-bottom: -1px;
+            color: grey;
+            text-decoration: none;
+            cursor: pointer;
+            width: calc((100% - (50px * 3))/ 3);
+            text-align: center;
+        }
+
+        .orange {
+            border-top: 2px solid orange;
+            border-right: 1px solid #ccc;
+            border-bottom: 1px solid white;
+            border-left: 1px solid #ccc;
+            color: black;
+            margin-top: -2px;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 10px;
+        }
+
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <div class="header_logo">logo</div>
+            <div class="progress-bar"></div>
+        </div>
+
+    </header>
+
+    <div class="container mt-5">
+        <ul class="list">
+            <li class="tab-button orange" data-id="0">Products</li>
+            <li class="tab-button"  data-id="1">Information</li>
+            <li class="tab-button" data-id="2">Shipping</li>
+        </ul>
+        <div class="tab-content show">
+            <p>상품설명입니다. Product</p>
+        </div>
+        <div class="tab-content">
+            <p>스펙설명입니다. Information</p>
+        </div>
+        <div class="tab-content">
+            <p>배송정보입니다. Shipping</p>
+        </div>
+    </div>
+
+
+
+    <div class="black-bg">
+        <div class="white-bg">
+            <h4>로그인하세요</h4>
+            <!-- form 안에 input과 button이 있어야 동작한다!!!!! -->
+            <form action="">
+                <input id="id_input" type="text" onkeyup="id_test(this);" placeholder="아이디 입력하세요">
+                <p class="id_none">아이디를 입력해주세요</p>
+                <p class="id_length">6글자 이상 입력해주세요</p>
+
+                <input id="pw_input" type="text" onkeyup="pw_test(this);" placeholder="비밀번호 입력하세요">
+                <p class="pw_none">비밀번호를 입력해주세요</p>
+                <p class="pw_length">6글자 이상 입력해주세요</p>
+
+                <input id="email_input" type="text" onkeyup="email_test(this);" placeholder="이메일을 입력하세요">
+                <p class="email_none">이메일을 입력해주세요</p>
+
+                <button class="submit" type="submit">전송</button>
+                <button class="btn btn-danger" type="button" id="close">닫기</button>
+                <button class="dark_mode_btn" type="button">dark</button>
+            </form>
+
+        </div>
+    </div>
+
+    <button class="open">open</button>
+    <div class="small_banner">
+        <span id="small_banner_num">5</span>초 이내 구매시 사은품 증정
+    </div>
+    <!--이미지 슬라이드  -->
+    <div style="overflow: hidden;">
+        <div class="slide_container">
+            <div class="slide_box">
+                <img src="../img/Product_img/SkinCare/1-1.jpg" alt="">
+            </div>
+            <div class="slide_box">
+                <img src="../img/Product_img/SkinCare/12-1.jpg" alt="">
+            </div>
+            <div class="slide_box">
+                <img src="../img/Product_img/SkinCare/10-1.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <button class="slide_1">1</button>
+    <button class="slide_2">2</button>
+    <button class="slide_3">3</button>
+    <button class="next">다음</button>
+    <button class="pre">이전</button>
+<div data-데이터이름="값"></div>
+
+    <div style="height: 1000px;"></div>
+    <script src="../코딩애플JS/main.js"></script>
+    <script>
+
+        // 공통으로 클래스 초기화해주는 부분은 밖에 선언
+        // $('.tab-button').on('click', function () {
+        //     // 탭이 추가되도 가능
+        //     let Repeat_number = $('.tab-button').length;
+        //     $('.tab-button').removeClass('orange');
+        //     $('.tab-content').removeClass('show');
+        //     for (let i = 0; i < Repeat_number; i++) {
+        //         $('.tab-button').eq(i).on('click', function () {
+        //             $('.tab-button').eq(i).addClass('orange');
+        //             $('.tab-content').eq(i).addClass('show');
+        //         })
+        //     }
+        // })
+
+
+
+        // for (let i = 0; i < Repeat_number; i++) {
+        //         $('.tab-button').eq(i).on('click', function () {
+        //             open_tep(i)
+        //         })
+        //     }
+
+
+function open_tep(i){
+    $('.tab-button').removeClass('orange');
+    $('.tab-content').removeClass('show');
+
+    $('.tab-button').eq(i).addClass('orange');
+    $('.tab-content').eq(i).addClass('show');
+}
+
+$('.list').click(function(e){
+    open_tep(e.target.dataset.id)
+})
+  
+// 
+let car = {name : '소나타',price : [1000,2000,3000]}
+// $('.tab-content').eq(0).html(car)
+$('.tab-content').eq(0).html(car.price)
+
+    </script>
+</body>
+</html>

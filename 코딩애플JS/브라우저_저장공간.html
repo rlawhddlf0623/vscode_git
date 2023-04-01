@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+    <script>
+/*
+1.구매버튼 클릭시 상품이름 배열에 담기
+형제요소잡기 (sibling) / val()
+2.localStorage에 json형태로 바꿔서 저장하기
+1)비어있을 경우 : 배열 추가 
+2)있을 경우 : 배열 수정 
+
+
+2.장바구니 페이지 방문시
+localStorage에 있는 상풍명들 꺼내 전부 진열
+
+*/
+
+
+
+
+
+
+
+
+
+
+        // 자료 저장
+        localStorage.setItem('name','kim')
+        // 자료 출력
+        localStorage.getItem('name')
+        // 자료 삭제
+        localStorage.removeItem('name')
+        /* 자료 수정
+        1) 출력해서 자료저장
+        */
+
+        let arr =[1,2,3];
+        // array / object -> json
+        let input_Arr = JSON.stringify(arr);
+        localStorage.setItem('num',input_Arr);
+
+        let output_arr = localStorage.getItem('num');
+        // json ->  array / object
+        output_arr =JSON.parse(output_arr);
+        console.log(output_arr)
+
+        
+       
+    </script>
+</body>
+</html>

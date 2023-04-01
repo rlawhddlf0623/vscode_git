@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../img/Product_img/daily/10-1.jpg">
+    <style>
+        /* top버튼 sticky로 */
+        /* 부모 box넘어갔을때 풀린다. */
+        /* 스크롤바 내리면 이미지 변화하게 */
+        body{
+            height: 3000px;
+            background-color: wheat;
+        }
+        .grey{
+            background: lightgrey;
+            height: 2000px;
+            margin-top:500px;
+            
+        }
+        .img{
+            /* 1.스크롤 할만한 부모 박스가 있어야 한다.
+               2.top같은 좌표속성과 함께 써야 한다.
+            */
+            float: right;
+            width: 400px;
+            position: sticky;
+            top:100px
+        }
+        .text{
+            float: left;
+            width: 400px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="grey">
+        <div class="img">
+            <img src="../img/Product_img/daily/10-2.jpg" width="100%" alt="">
+        </div>
+        <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur magnam incidunt saepe expedita cupiditate? Nesciunt tempora repudiandae perferendis perspiciatis cumque unde asperiores cum atque dolore! Eos, ipsum? Quisquam, veniam deserunt.</div>
+
+    </div>
+</body>
+</html>

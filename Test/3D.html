@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer{
+            width: 300px;
+            height: 300px;
+            
+        }
+        .inner{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transition: all 1s;
+            /* 실제 3d요소처럼 동작하게 */
+            transform-style:preserve-3d;
+        }
+        .inner:hover{
+            transform: rotateY(180deg);
+
+        }
+        .front{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-color: chartreuse;
+            border-radius: 50%;
+            /* 뒷면이 안보이게 */
+            backface-visibility: hidden;
+            z-index: 1;
+        }
+        /* 글자가 뒤집었을때 정확히 보이도록 
+        transform: rotateY(180deg);
+        */
+        .back{
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transform: rotateY(180deg);
+            position: absolute;
+            background-color: bisque;
+            border-radius: 50%;
+            color: white;
+            box-sizing: border-box;
+            padding-top:50px ;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner">
+            <div class="front"></div>
+            <div class="back">
+                <h4>개발자</h4>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

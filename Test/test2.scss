@@ -1,0 +1,24 @@
+.alert_box{
+   .alert{
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 15px;
+    color: white;
+}
+}
+@mixin box_color($arg){
+	background-color:$arg;	
+}
+.one{
+    @include box_color(aqua);    
+}
+.two{
+    @extend .alert;
+    background-color: yellowgreen;
+}
+.three{
+    @include box_color(blue);
+}
+
+// box에 각각 다른속성을 줄때마다 클래스를 새로만들지
+// 않고 속성을 줄수 없나?

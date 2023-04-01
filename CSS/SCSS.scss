@@ -1,0 +1,37 @@
+// @use (import)
+// @use 'reset.scss';
+// 파일명앞에 _는 이 파일은 CSS파일로 컴파일하지 x = 첨부용 파일
+
+
+// $변수명 : ;
+// 사칙연산 가능하지만 같은 단위끼리 (%랑 px은 x)
+        // $main-Color : blueviolet;
+        // $Sub-Color : red;
+        // $Size : 16px;
+       
+
+//@extend 
+// 중복된 스타일을 클래스에 넣어놓고 필요할때마다 가져온다.
+//  %는 임시클래스(단독으로 컴파일되지 않는다.)
+%div{
+    width: 200px;
+    height: 200px;
+    padding: 20px;
+}
+.div-blueviolet{
+    @extend %div;
+//다른파일에 있는 변수와 @mixin을 가져다 쓸수 있다.
+// 파일명.$변수명; 
+    background:reset.$main-Color;
+    @include reset.btn("500");
+    
+}
+.div-red{
+    @extend %div;
+    background: $Sub-Color;
+}
+
+
+
+
+

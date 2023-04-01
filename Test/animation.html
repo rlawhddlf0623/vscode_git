@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{margin: 0px;}
+        .btn{
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+            background-color: black;
+            color: white;
+            border-radius: 5px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .btn::after{
+            content: "흔들버튼";
+        }
+        .btn:hover{
+            animation-name: move;
+            animation-duration: 1s;
+       
+        }
+        @keyframes move{
+            33%{transform: rotate(10deg);}
+            66%{transform: rotate(-10deg);}
+            99%{transform: rotate(0deg);}
+        }
+        .side_menu{
+            position: fixed;
+            width: 200px;
+            height: 100%;
+            padding: 20px;
+            background-color: black;
+            text-align: right;
+            color: white;
+            font-size: 20px;
+            transform: translateX(-150px);
+            transition: all 1s;
+            z-index: 5;
+        }
+        .side_menu:hover{
+            transform: translateX(0px);
+            text-align: center;
+        } 
+        @keyframes slide {
+            0%{
+                transform: translateX(-250px);}
+            50%{ transform:translateX(50px) skewX(-30deg)}
+            100%{ transform: translateX(0px);}
+        }
+        .side_menu:hover p{            
+            animation-name: slide;
+            animation-duration: 1s;
+        }
+        p{text-align: center;}
+
+    </style>
+</head>
+<body>
+    <div class="btn"></div>
+    <!-- side_menu -->
+    <div class="side_menu">
+        <h4>menu</h4>
+        <p>item</p>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="btn" value="1">Button 1</button>
+    <button class="btn" value="2">Button 2</button>
+    <button class="btn" value="3">Button 3</button>
+    <button class="btn" value="4">Button 4</button>
+
+    <div class="col-sm-4">
+        <img src="https://via.placeholder.com/600" class="w-100">
+        <h5>오일 파스타</h5>
+        <p>1000원</p>
+        <button class="buy_btn">구매</button>
+    </div>  
+    <div class="col-sm-4">
+        <img src="https://via.placeholder.com/600" class="w-100">
+        <h5>크림 파스타</h5>
+        <p>1000원</p>
+        <button class="buy_btn">구매</button>
+    </div> 
+
+    
+    <script>
+      const buyBtns = document.querySelectorAll('.buy_btn');
+      const buyBtn = document.querySelector('.buy_btn');
+   
+        buyBtn.addEventListener("click", (event) => {
+        const menuItem = event.target.parentNode; // 클릭한 버튼의 부모 요소를 참조합니다.
+        const menuName = menuItem.querySelector('h5').textContent; // 메뉴 이름을 가져옵니다.  
+        const values = [];       
+            values.push( menuName);           
+            console.log(values);       
+      });
+  
+// const btns = document.querySelector(".btn");
+
+// // 클릭 이벤트 리스너를 등록합니다.
+
+// btns.addEventListener("click", (event) => {
+//     const a = event.target.parentNode; // 클릭한 버튼의 부모 요소를 참조합니다.
+//     const menuName = a.querySelector('.btn').textContent; // 메뉴 이름을 가져옵니다.  
+//     const values = [];
+//     // 버튼 요소의 값을 배열에 담습니다. 
+//       values.push(menuName);
+//     console.log(values);
+//   });
+
+    </script>
+
+</body>
+</html>
